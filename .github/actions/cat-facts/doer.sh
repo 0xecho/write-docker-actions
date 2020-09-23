@@ -1,3 +1,4 @@
+cd /all;
 for mdmn in `cat master_list`;do
     mdmnp=`echo "$mdmn" | tr ':/*.' '_'`; 
     mkdir results_$mdmnp;
