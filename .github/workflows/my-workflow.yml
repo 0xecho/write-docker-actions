@@ -11,11 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       
+      - name: meow
+        uses: ./.github/actions/cat-facts
+      
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
         with:
           name: main_artifact
           path: /all/final.zip
-
-      - name: meow
-        uses: ./.github/actions/cat-facts
