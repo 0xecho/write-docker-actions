@@ -20,4 +20,4 @@ COPY . .
 RUN chmod +x doer.sh
 
 
-ENTRYPOINT ["bash","./doer.sh"]
+ENTRYPOINT ["bash","/all/doer.sh"]
