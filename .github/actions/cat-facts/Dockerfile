@@ -1,9 +1,23 @@
-FROM python:3
+FROM ubuntu:latest
+MAINTAINER 0xecho <0xecho@proto-code.com>
 
-COPY requirements.txt ./
-
-RUN pip install --no-cache-dir -r requirements.txt
-
+RUN apt-get update
+RUN apt-get install -y git
+RUN apt-get install -y python3 python3-pip
+WORKDIR /all
+RUN git clone --depth 1 https://github.com/0xecho/OneForAll.git ofa
+WORKDIR /all/ofa
+RUN python3 -m pip install -U pip setuptools wheel -i https://mirrors.aliyun.com/pypi/simple/
+RUN pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+  
+WORKDIR /all
+RUN git clone --depth 1 https://github.com/sullo/nikto.git nkto
+RUN chmod +x nkto/program/nikto.pl
+RUN ln -s /all/nkto/program/nikto.pl /usr/bin/nikto
+RUN apt install perl libnet-ssleay-perl openssl libauthen-pam-perl libio-pty-perl -y
+RUN apt install iputils-ping -y
 COPY . .
+RUN chmod +x doer.sh
 
-CMD [ "python", "/src/main.py" ]
+
+ENTRYPOINT ["bash","./doer.sh"]
