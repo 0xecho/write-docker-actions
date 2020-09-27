@@ -14,4 +14,4 @@ for mdmn in `cat master_list`;do
     done
 done
 
-zip -r final.zip .
+zip -r final.zip results_*
