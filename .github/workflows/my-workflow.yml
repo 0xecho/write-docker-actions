@@ -2,7 +2,7 @@ name: Docker Actions
 
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
 
 jobs:
   action:
