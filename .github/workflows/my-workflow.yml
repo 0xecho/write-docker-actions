@@ -13,6 +13,9 @@ jobs:
       
       - name: meow
         uses: ./.github/actions/cat-facts
+        env:
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+
       
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2
