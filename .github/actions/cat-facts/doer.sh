@@ -1,10 +1,12 @@
 cd /all;
+chmod +x gist.sh
 for mdmn in `cat master_list`;do
     mdmnp=`echo "$mdmn" | tr ':/*.' '_'`; 
     mkdir results_$mdmnp;
     python3 ofa/oneforall.py run --brute False --target $mdmn --path results_$mdmnp;
     RESPATH=results_$mdmnp;
-    mv $RESPATH/all*.txt $RESPATH/init; 
+    mv $RESPATH/all*.txt $RESPATH/init;
+    ./gist.sh $RESPATH/init $GIST_TOKEN
     mkdir $RESPATH/nikto;
     for i in `cat $RESPATH/init`; do
      j=`echo "$i" | tr ':/*.' '_'`; 
