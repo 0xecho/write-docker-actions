@@ -1,8 +1,8 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 MAINTAINER 0xecho <0xecho@proto-code.com>
 
 RUN apt-get update
-RUN apt-get install -y git zip
+RUN apt-get install -y git zip gist
 RUN apt-get install -y python3 python3-pip
 WORKDIR /all
 RUN git clone --depth 1 https://github.com/0xecho/OneForAll.git ofa
@@ -16,4 +16,4 @@ COPY . .
 RUN chmod +x doer.sh
 
 
-ENTRYPOINT ["bash","/all/doer.sh"]
+ENTRYPOINT ["bash","doer.sh"]
