@@ -8,7 +8,7 @@ for mdmn in `cat master_list`;do
     RESPATH=results_$mdmnp;
     mv $RESPATH/all*.txt $RESPATH/init;
     echo '--------\n' >> $RESPATH/init;
-    # gist-paste $RESPATH/init -f "$mdmn"__`date +%s`    
+    gist-paste $RESPATH/init -f "$mdmn"__`date +%s`    
     cat $RESPATH/init > /all/master
 done
 cat /all/ofa/results/takeover* > takeovers
