@@ -16,6 +16,7 @@ jobs:
         uses: ./.github/actions/cat-facts
         env:
           GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          ME_TOKEN: ${{secrets.ME_TOKEN}}
 
       
       - name: Upload a Build Artifact
