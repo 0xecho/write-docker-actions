@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER 0xecho <0xecho@proto-code.com>
 
 RUN apt-get update
-RUN bash -c "DEBIAN_FRONTEND=noninteractive apt-get install -y git zip gist build-essential xorg libssl-dev libxrender-dev wget python3 python3-pip tar"
+RUN bash -c "DEBIAN_FRONTEND=noninteractive apt-get install -y git curl zip gist build-essential xorg libssl-dev libxrender-dev wget python3 python3-pip tar"
 RUN apt-get update && apt-get install -y --no-install-recommends xvfb libfontconfig libjpeg-turbo8 xfonts-75dpi fontconfig
 WORKDIR /all
 COPY . .
