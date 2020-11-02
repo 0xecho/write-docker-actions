@@ -1,5 +1,6 @@
 echo $GIST_TOKEN > ~/.gist
 touch /all/master
+cp telegram.sh /all/telegram.sh
 cd /all;
 chmod +x telegram.sh
 for mdmn in `cat master_list`;do
