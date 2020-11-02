@@ -11,7 +11,7 @@ for mdmn in `cat master_list`;do
     mv $RESPATH/all*.txt $RESPATH/init;
     gist-paste $RESPATH/init -f "$mdmn"__`date +%s`    
     cat $RESPATH/init >> /all/master
-    cat $RESPATH/init | python3 /all/Shutter/shutter.py --stdin | xargs -p30 -n1 -I{} /all/telegram.sh -i {} -t $ME_TOKEN -c 303757027 -T {}
+    cat $RESPATH/init | python3 /all/Shutter/shutter.py --stdin | xargs -P 30 -n1 -I{} /all/telegram.sh -i {} -t $ME_TOKEN -c 303757027 -T {}
 done
 cat /all/ofa/results/takeover* > takeovers
 python3 gag.py /all/opt
