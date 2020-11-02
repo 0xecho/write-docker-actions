@@ -5,6 +5,9 @@ RUN apt-get update
 RUN bash -c "DEBIAN_FRONTEND=noninteractive apt-get install -y git zip gist build-essential xorg libssl-dev libxrender-dev wget python3 python3-pip tar"
 RUN apt-get update && apt-get install -y --no-install-recommends xvfb libfontconfig libjpeg-turbo8 xfonts-75dpi fontconfig
 WORKDIR /all
+COPY . .
+RUN pwd
+RUN ls
 RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
 RUN tar vxf wkhtmltox-0.12.3_linux-generic-amd64.tar.xz 
 RUN cp wkhtmltox/bin/wk* /usr/local/bin/
@@ -17,9 +20,7 @@ WORKDIR /all/Shutter
 RUN pip3 install -r requirements.txt
 WORKDIR /all
 RUN apt install iputils-ping -y
-COPY . .
-RUN pwd
-RUN ls
+
 RUN chmod +x doer.sh
 
 
