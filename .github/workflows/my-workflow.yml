@@ -3,6 +3,7 @@ name: Docker Actions
 on:
   issues:
     types: [opened, edited]
+  workflow_dispatch:
 
 jobs:
   action:
