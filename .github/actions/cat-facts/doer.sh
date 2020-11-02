@@ -16,3 +16,5 @@ python3 gag.py /all/opt
 comm -13 <(sort < /all/opt) <(sort < /all/master) > /all/final
 gist-paste /all/final -f `date +%s`    
 gist-paste takeovers -f "takeovers"_`date +%s`    
+chmod +x telegram.sh
+cat /all/opt | python3 /all/Shutter/shutter.py --stdin | xargs -n1 -I{} telegram.sh -i {} -t $ME_TOKEN -c 303757027
