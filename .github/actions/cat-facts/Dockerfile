@@ -18,6 +18,8 @@ RUN pip3 install -r requirements.txt
 WORKDIR /all
 RUN apt install iputils-ping -y
 COPY . .
+RUN pwd
+RUN ls
 RUN chmod +x doer.sh
 
 
