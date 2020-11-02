@@ -9,10 +9,12 @@ RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.3/wkh
 RUN tar vxf wkhtmltox-0.12.3_linux-generic-amd64.tar.xz 
 RUN cp wkhtmltox/bin/wk* /usr/local/bin/
 RUN git clone --depth 1 https://github.com/0xecho/OneForAll.git ofa -b custom
-WORKDIR /all/ofa
+RUN git clone --depth 1 https://github.com/0xecho/Shutter.git
 RUN python3 -m pip install -U pip setuptools wheel -i https://mirrors.aliyun.com/pypi/simple/
+WORKDIR /all/ofa
 RUN pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
-  
+WORKDIR /all/Shutter
+RUN pip3 install -r requirements.txt
 WORKDIR /all
 RUN apt install iputils-ping -y
 COPY . .
