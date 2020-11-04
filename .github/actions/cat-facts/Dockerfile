@@ -43,7 +43,7 @@ RUN go get github.com/Emoe/kxss
 RUN go get -u github.com/jaeles-project/gospider
 
 RUN git clone https://github.com/0xecho/Arjun /all/Arjun
-RUN pip3 install /all/Arjun/requirements.txt
+RUN pip3 install requests
 
 RUN chmod +x doer.sh
 ENTRYPOINT ["bash","/all/doer.sh"]
