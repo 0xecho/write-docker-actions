@@ -45,5 +45,8 @@ RUN go get -u github.com/jaeles-project/gospider
 RUN git clone https://github.com/0xecho/Arjun /all/Arjun
 RUN pip3 install requests
 
+RUN git clone https://github.com/maurosoria/dirsearch.git /all/dirsearch
+
+
 RUN chmod +x doer.sh
 ENTRYPOINT ["bash","/all/doer.sh"]
