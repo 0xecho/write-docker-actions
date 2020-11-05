@@ -40,7 +40,7 @@ RUN apt install iputils-ping -y
 RUN go get -u -v github.com/lc/gau
 RUN go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
 RUN go get github.com/Emoe/kxss
-RUN go get https://github.com/hahwul/dalfox
+RUN go get github.com/hahwul/dalfox
 RUN go get -u github.com/jaeles-project/gospider
 
 RUN git clone https://github.com/0xecho/Arjun /all/Arjun
