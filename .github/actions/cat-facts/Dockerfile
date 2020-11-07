@@ -24,7 +24,7 @@ RUN apt install iputils-ping -y
 RUN chmod +x doer_two.sh
 
 
-ENTRYPOINT ["bash","/all/doer.sh"]
+ENTRYPOINT ["bash","/all/doer_two.sh"]
 
 # FROM golang:latest
 # MAINTAINER 0xecho <0xecho@proto-code.com>
